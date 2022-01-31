@@ -1,0 +1,28 @@
+CREATE TABLE "COMMERCIAL"."DBP"."ZJCUST"
+(
+    zero_region___t STRING,
+    zjcust STRING NOT NULL,
+    zjbjiclv2___t STRING,
+    zjsreigce STRING,
+    zjcdsrecd STRING,
+    zjcdsrecd___t STRING,
+    zjlocacd STRING,
+    zjlocacd___t STRING,
+    zjsmwerks STRING,
+    zjsmpdroc STRING,
+    zjddexfl___t STRING,
+    zjdfflg STRING,
+    zjbjicl_m STRING,
+    zjbtindgc STRING,
+    zjchgrcd STRING,
+    zjchncd STRING,
+    zjschncd STRING,
+    zjbtlaccd STRING,
+    zjaddress STRING,
+    zjslctlbs STRING,
+    zjdivold2 STRING,
+    zjtorikec STRING,
+    zjinoutcl STRING,
+    zjdivgcd STRING,
+    zjdivcd STRING
+);

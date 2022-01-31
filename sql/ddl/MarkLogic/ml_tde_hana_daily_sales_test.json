@@ -1,0 +1,590 @@
+const tde = require("/MarkLogic/tde.xqy");
+ 
+var template = xdmp.toJSON(
+  {
+    "template": {
+        "enabled": true,
+        "description": "Test template for 10 JSON records in 1 file",
+        "context": "/sales",
+        "collections": ["test_HANA"],
+        "rows": [
+            {
+            "schemaName": "HANA_daily_sales",
+            "viewName": "HANA_test",
+            "viewLayout": "identical",
+            "columns": [
+                {
+                    "name": "calyear",
+                    "scalarType": "string",
+                    "val": "calyear",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "calmonth",
+                    "scalarType": "string",
+                    "val": "calmonth",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "calday",
+                    "scalarType": "string",
+                    "val": "calday",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "budat",
+                    "scalarType": "string",
+                    "val": "budat",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "bw_calday_week",
+                    "scalarType": "string",
+                    "val": "bw_calday_week",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "year_ind",
+                    "scalarType": "string",
+                    "val": "year_ind",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "comp_code",
+                    "scalarType": "string",
+                    "val": "comp_code",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "zjcustbrg",
+                    "scalarType": "string",
+                    "val": "zjcustbrg",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "zjmatrial",
+                    "scalarType": "string",
+                    "val": "zjmatrial",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "zj445qatr",
+                    "scalarType": "string",
+                    "val": "zj445qatr",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "zj445week",
+                    "scalarType": "string",
+                    "val": "zj445week",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "calday_prevyear",
+                    "scalarType": "string",
+                    "val": "calday_prevyear",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "calday_week_prevyear",
+                    "scalarType": "string",
+                    "val": "calday_week_prevyear",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "werks",
+                    "scalarType": "string",
+                    "val": "werks",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "ww202",
+                    "scalarType": "string",
+                    "val": "ww202",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "zjmatagsp",
+                    "scalarType": "string",
+                    "val": "zjmatagsp",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "absmg_me",
+                    "scalarType": "string",
+                    "val": "absmg_me",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "absmg_me_ly",
+                    "scalarType": "string",
+                    "val": "absmg_me_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "absmg_cy",
+                    "scalarType": "decimal",
+                    "val": "absmg_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "absmg_ly",
+                    "scalarType": "decimal",
+                    "val": "absmg_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_bapc",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_bapc",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_bapc",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_bapc",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_barasu",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_barasu",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_barasu",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_barasu",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_nsr",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_nsr",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_nsr",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_nsr",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_cogs",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_cogs",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_cogs",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_cogs",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_pc",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_pc",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_pc",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_pc",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_rb",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_rb",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_rb",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_rb",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_gp",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_gp",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_gp",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_gp",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_fscom",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_fscom",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_fscom",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_fscom",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_logistics_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_logistics_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_logistics_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_logistics_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_sal_del_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_sal_del_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_sal_del_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_sal_del_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_cen_shp_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_cen_shp_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_cen_shp_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_cen_shp_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_cent_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_cent_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_cent_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_cent_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_bs_en_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_bs_en_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_bs_en_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_bs_en_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_trp_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_trp_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_trp_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_trp_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_mp",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_mp",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_mp",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_mp",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_jr_opr_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_jr_opr_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_jr_opr_cst",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_jr_opr_cst",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_cy_jr_tr_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_cy_jr_tr_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "cm_ly_jr_tr_fee",
+                    "scalarType": "decimal",
+                    "val": "cm_ly_jr_tr_fee",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv511_cy",
+                    "scalarType": "decimal",
+                    "val": "vv511_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv511_ly",
+                    "scalarType": "decimal",
+                    "val": "vv511_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv512_cy",
+                    "scalarType": "decimal",
+                    "val": "vv512_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv512_ly",
+                    "scalarType": "decimal",
+                    "val": "vv512_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv513_cy",
+                    "scalarType": "decimal",
+                    "val": "vv513_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv513_ly",
+                    "scalarType": "decimal",
+                    "val": "vv513_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv517_cy",
+                    "scalarType": "decimal",
+                    "val": "vv517_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv517_ly",
+                    "scalarType": "decimal",
+                    "val": "vv517_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv521_cy",
+                    "scalarType": "decimal",
+                    "val": "vv521_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv521_ly",
+                    "scalarType": "decimal",
+                    "val": "vv521_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv522_cy",
+                    "scalarType": "decimal",
+                    "val": "vv522_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv522_ly",
+                    "scalarType": "decimal",
+                    "val": "vv522_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv523_cy",
+                    "scalarType": "decimal",
+                    "val": "vv523_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv523_ly",
+                    "scalarType": "decimal",
+                    "val": "vv523_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv524_cy",
+                    "scalarType": "decimal",
+                    "val": "vv524_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv524_ly",
+                    "scalarType": "decimal",
+                    "val": "vv524_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv525_cy",
+                    "scalarType": "decimal",
+                    "val": "vv525_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv525_ly",
+                    "scalarType": "decimal",
+                    "val": "vv525_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv526_cy",
+                    "scalarType": "decimal",
+                    "val": "vv526_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv526_ly",
+                    "scalarType": "decimal",
+                    "val": "vv526_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv527_cy",
+                    "scalarType": "decimal",
+                    "val": "vv527_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv527_ly",
+                    "scalarType": "decimal",
+                    "val": "vv527_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv528_cy",
+                    "scalarType": "decimal",
+                    "val": "vv528_cy",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "vv528_ly",
+                    "scalarType": "decimal",
+                    "val": "vv528_ly",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "mgr_data_type",
+                    "scalarType": "string",
+                    "val": "mgr_data_type",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "hana_view",
+                    "scalarType": "string",
+                    "val": "hana_view",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "plant_t",
+                    "scalarType": "string",
+                    "val": "plant_t",
+                    "nullable": true,
+                    "invalidValues": "ignore"
+                }
+            ]
+            }
+        ]
+    }
+  }
+);
+
+tde.templateInsert("/DBP/HANA_test.json" , template);

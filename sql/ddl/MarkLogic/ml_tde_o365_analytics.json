@@ -1,0 +1,59 @@
+declareUpdate()
+const tde = require("/MarkLogic/tde.xqy");
+ 
+var template = xdmp.toJSON(
+  {
+    "template": {
+        "enabled": true,
+        "description": "Office 365 User Analytics test table",
+        "context": "/root",
+        "collections": ["O365-Analytics"],
+        "rows": [
+            {
+            "schemaName": "O365_Analytics",
+            "viewName": "user_events",
+            "viewLayout": "identical",
+            "columns": [
+                {
+                    "name": "CreationTime",
+                    "scalarType": "string",
+                    "val": "CreationTime",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "Id",
+                    "scalarType": "string",
+                    "val": "Id",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "Operation",
+                    "scalarType": "string",
+                    "val": "Operation",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "Workload",
+                    "scalarType": "string",
+                    "val": "Workload",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                },
+                {
+                    "name": "UserId",
+                    "scalarType": "string",
+                    "val": "UserId",
+                    "nullable": false,
+                    "invalidValues": "ignore"
+                }
+            ]
+            }
+        ]
+    }
+  }
+);
+
+tde.templateInsert("/O365_Analytics/user_events.json" , template);

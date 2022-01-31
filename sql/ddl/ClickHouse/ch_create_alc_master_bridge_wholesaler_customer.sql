@@ -1,0 +1,13 @@
+CREATE TABLE commercial.alc_master_bridge_wholesaler_customer
+(
+    WHOLESALER_NAME String,
+    CUSTOMER_BRANCH_CODE String,
+    CHANNEL String,
+    CUSTOMER_CODE_BJI String,
+    CUSTOMER_NAME_BJI String,
+    CUSTOMER_CODE_LV3 String,
+    CUSTOMER_NAME_LV3 String,
+    ALCOHOL_CODE String
+)
+ENGINE = MergeTree()
+ORDER BY (CUSTOMER_BRANCH_CODE, CHANNEL, CUSTOMER_CODE_BJI, CUSTOMER_CODE_LV3, ALCOHOL_CODE);
